@@ -12,17 +12,69 @@
 #	--------------------------------------------------------------------------+
 
 
+#	--------------------------------------------------------------------------+
+#
+#	Particle Parameters
+#
+#	"struct" to store particle values
+#
+#	--------------------------------------------------------------------------+
+
 class Particle_Parameters():
 	def __init__(self):
-		pass
+		self._pos = 0
+		self._vel = 0
+		self._coefs = []
 
 
+	def __str__(self):
+		return "Position: {}\r\nVelocity: {}\r\nCoefficients: {}\r\n".format(
+			self._pos,
+			self._vel,
+			self._coefs
+		)
+
+
+	@property
+	def position(self):
+		return self._pos
+
+
+	@position.setter
+	def position(self, val):
+		self._pos = val
+
+
+	@property
+	def velocity(self):
+		return self._vel
+
+
+	@velocity.setter
+	def velocity(self, val):
+		self._vel = val
+
+
+	@property
+	def coeffs(self):
+		return self._coefs
+
+	@coeffs.setter
+	def coeffs(self, vals):
+		self._coefs = vals
+
+
+#	--------------------------------------------------------------------------+
+#
+#	Particle class
+#
+#	
 class Particle():
-	def __init__(self):
-		pass
+	def __init__(self, randomize = False):
+		self._params = Particle_Parameters()
 
 
-class PSO_Algorithm():
+class Algorithm():
 	def __init__(self):
 		pass
 
